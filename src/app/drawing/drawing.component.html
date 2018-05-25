@@ -1,0 +1,6 @@
+<figure class="figure" (click) = "clicked()">
+  <!-- [alt]='drawing.name' -->
+  <img class="img-circle" [src]="getDrawingImageUrl()" title="{{ drawing?.name }}"/>
+</figure>
+<div class="desc" [hidden]="print">{{ drawing.description }}</div>
+
