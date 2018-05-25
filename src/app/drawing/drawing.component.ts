@@ -20,7 +20,6 @@ export class DrawingComponent implements OnInit {
 
   getDrawingImageUrl() {
     const url = `assets/images/${this.drawing.img.toLowerCase()}.jpg`;
-    console.log(url);
     return url;
   }
 

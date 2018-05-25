@@ -16,4 +16,10 @@ export class DrawingService {
     return this.http.get<Array<Drawing>>(
       'http://localhost:8080/lesdessinsdesafinette2/drawings');
   }
+
+  someDrawings(category: String): Observable<Drawing[]> {
+    // http://localhost:8080/lesdessinsdesafinette2/somedrawings?category=fleurs
+    return this.http.get<Array<Drawing>>(
+      `http://localhost:8080/lesdessinsdesafinette2/somedrawings?category=${category}`);
+  }
 }

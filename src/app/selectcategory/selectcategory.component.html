@@ -1,14 +1,19 @@
 <h2>Choisir une catégorie de dessin</h2>
-<!-- <form (ngSubmit)="selectCategory()" [formGroup]="categoryForm"> -->
-    <div>     
-        <label>Category</label>
-        <!-- (ngModelChange)="selectCategory($event)"-->
-        <!-- formControlName="category" -->
-        <select id="category" (ngModel)="categories">
-            <option *ngFor="let c of categories" [value]="c">{{c.name}}</option>
+<form (ngSubmit)="selectCategory()" [formGroup]="categoryForm">
+    <div class="form-group">     
+        <label for="category">Category: </label>
+        <select formControlName="category" class="form-control" id="category" (ngModel)="categories">
+            <option *ngFor="let c of categories" [value]="c.name">{{c.name}}</option>
         </select>
     </div>  
- <!-- <button type="submit">Selectionner</button>
-</form> -->
+ <button class="btn btn-primary" type="submit">Selectionner</button>
+</form>
+
+<section class="row">
+    <div *ngFor="let d of drawings">  
+        <app-drawing [drawing] = "d"></app-drawing>
+    </div>
+</section>
+
 
 

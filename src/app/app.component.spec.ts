@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { DrawingsComponent } from './drawings/drawings.component';
 import { SelectcategoryComponent } from './selectcategory/selectcategory.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -13,7 +14,8 @@ describe('AppComponent', () => {
         SelectcategoryComponent
       ],
       imports: [
-        HttpClientModule
+        HttpClientModule,
+        ReactiveFormsModule
       ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     }).compileComponents();

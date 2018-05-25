@@ -8,13 +8,7 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  navbarCollapsed = true;
-
   constructor(private router: Router) { }
-
-  toggleNavbar() {
-    this.navbarCollapsed = !this.navbarCollapsed;
-  }
 
   ngOnInit() {
   }

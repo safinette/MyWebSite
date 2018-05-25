@@ -14,6 +14,7 @@ import { MenuComponent } from './menu/menu.component';
 
 import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
+import { TabdrawingsComponent } from './tabdrawings/tabdrawings.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RouterModule } from '@angular/router';
     DrawingsComponent,
     SelectcategoryComponent,
     DrawingComponent,
-    MenuComponent
+    MenuComponent,
+    TabdrawingsComponent
   ],
   imports: [
     BrowserModule,

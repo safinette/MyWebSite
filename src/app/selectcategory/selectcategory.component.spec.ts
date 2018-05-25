@@ -6,26 +6,29 @@ import { CategoryService } from '../services/category.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { APP_BASE_HREF } from '@angular/common';
+import { By } from '@angular/platform-browser';
 
 describe('SelectcategoryComponent', () => {
-  let component: SelectcategoryComponent;
-  let fixture: ComponentFixture<SelectcategoryComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [AppModule],
-      // providers: [CategoryService],
+      providers: [{provide: APP_BASE_HREF, useValue : '/' }]
     })
     .compileComponents();
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(SelectcategoryComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  it('should call the selectcategory method on submit', () => {
+    const fixture: ComponentFixture<SelectcategoryComponent> =
+                    TestBed.createComponent(SelectcategoryComponent);
+    spyOn(fixture.componentInstance, 'selectCategory');
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    fixture.detectChanges();
+    fixture.debugElement.query(By.css('form')).triggerEventHandler('ngSubmit', {});
+
+    expect(fixture.componentInstance.selectCategory).toHaveBeenCalled();
+    expect((fixture.componentInstance.selectCategory as jasmine.Spy).calls.count())
+      .toEqual(1, 'Looks like you are calling selectcategory several times!');
   });
 });
