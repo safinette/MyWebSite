@@ -1,14 +1,18 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Les dessins de safinette</a>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #CECECE;">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link"  *ngIf="user" href="" routerLink="/drawings">En images</a>
+      <a class="nav-item nav-link"  *ngIf="user" href="" routerLink="/somedrawings">Par catégorie</a>
+      <a class="nav-item nav-link"  *ngIf="user" href="" routerLink="/list">Liste</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="" routerLink="/">Home</a></li>
-      <li><a href="" routerLink="/drawings">Mes dessins en image</a></li>
-      <li><a href="" routerLink="/somedrawings">Mes dessins par catégorie</a></li>
-      <li><a href="" routerLink="/list">Liste des dessins</a></li>
-    </ul>
+  </div>
+  <div>
+    <button type="button" (click)="logout($event)">
+        <img class="small" src="assets/images/logout.jpg">
+    </button>
+    <span class="nav-item navbar-text mr-2 font-weight-bold" *ngIf="user">
+      {{ user.login }} 
+    </span>
   </div>
 </nav>
-

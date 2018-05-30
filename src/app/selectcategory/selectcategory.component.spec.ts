@@ -13,8 +13,7 @@ describe('SelectcategoryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [AppModule],
-      providers: [{provide: APP_BASE_HREF, useValue : '/' }]
+      imports: [AppModule]
     })
     .compileComponents();
   }));

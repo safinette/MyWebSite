@@ -4,11 +4,15 @@
           <th>Name</th>
           <th>Description</th> 
           <th>Categorie</th>
+          <th>Details</th>
         </tr>
         <tr *ngFor="let d of drawings">
           <td>{{ d.name }}</td>
           <td>{{ d.description }}</td>
           <td>{{ d.category.name }}</td>
+          <td><a [routerLink]="['/list', d.id]"  
+              class="badge badge-info">Details</a>
+          </td>
         </tr>
     </table>
 </div>

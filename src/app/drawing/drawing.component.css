@@ -6,5 +6,7 @@ img {
 }
 
 .desc {
-    font-family: cursive;
+    font-family: 'cac_champagneregular', Arial, serif; 
+    font-weight: bold;
+    font-size: 20px;
 }

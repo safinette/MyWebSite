@@ -1,0 +1,17 @@
+.card{
+    height: 53rem;
+    width: 55rem;
+    margin: auto;
+}
+
+h5{
+    font-family: 'cac_champagneregular', Arial, serif; 
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h4{
+    font-family: 'cac_champagneregular', Arial, serif; 
+    font-size: 30px;
+    font-weight: bold;
+}

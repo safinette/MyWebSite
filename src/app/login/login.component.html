@@ -1,0 +1,21 @@
+<h1>Log in</h1>
+<form (ngSubmit)="connect(userForm.value)" #userForm="ngForm">
+  <div class="form-group">  
+    <label>Username</label>
+    <input name="login" class="form-control" [(ngModel)]="credentials.login" required>  
+    <div *ngIf="userForm.dirty && userForm.hasError('required')">
+      Username is required
+    </div>  
+  </div>
+  <div class="form-group">  
+    <label>Password</label>
+    <input type="password" class="form-control" name="password" [(ngModel)]="credentials.password" required>  
+    <div *ngIf="userForm.dirty && userForm.hasError('required')">
+      Password is required
+    </div>  
+  </div>  
+  <div class="alert alert-danger" *ngIf="authenticationFailed" id="registration-error">
+    Nope, try again
+  </div>
+  <button type="submit" [disabled]="userForm.invalid">Connect</button>
+</form>

@@ -9,7 +9,6 @@ import { HttpClient } from '@angular/common/http';
 export class DrawingService {
 
   constructor(private http: HttpClient) {
-
   }
 
   drawings(): Observable<Drawing[]> {
@@ -21,5 +20,10 @@ export class DrawingService {
     // http://localhost:8080/lesdessinsdesafinette2/somedrawings?category=fleurs
     return this.http.get<Array<Drawing>>(
       `http://localhost:8080/lesdessinsdesafinette2/somedrawings?category=${category}`);
+  }
+
+  onedrawing(id: String): Observable<Drawing> {
+    return this.http.get<Drawing>(
+      `http://localhost:8080/lesdessinsdesafinette2/onedrawing?id=${id}`);
   }
 }

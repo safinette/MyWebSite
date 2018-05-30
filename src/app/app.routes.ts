@@ -3,10 +3,22 @@ import { SelectcategoryComponent } from './selectcategory/selectcategory.compone
 import { Routes } from '@angular/router';
 import { TabdrawingsComponent } from './tabdrawings/tabdrawings.component';
 import { HomeComponent } from './home/home.component';
+import { DetailsdrawingComponent } from './detailsdrawing/detailsdrawing.component';
+import { LoginComponent } from './login/login.component';
+import { PageComponent } from './page/page.component';
+import { PagesComponent } from './pages/pages.component';
 
 export const ROUTES: Routes = [
-    { path: '', component: HomeComponent },
+    { path: 'home', component: HomeComponent },
     { path: 'drawings', component: DrawingsComponent },
     { path: 'somedrawings', component: SelectcategoryComponent},
-    { path: 'list', component: TabdrawingsComponent},
+    { path: '' , component: LoginComponent},
+    { path: 'pagination' , component: PageComponent},
+    { path: 'pages' , component: PagesComponent},
+    { path: 'list',
+        children: [
+            { path: '', component: TabdrawingsComponent },
+            { path: ':drawingId', component: DetailsdrawingComponent}
+        ]
+    }
 ];

@@ -1,13 +1,20 @@
-<div class="media">
-    <div class="media-body">
-        <img class="img-thumbnail img-circle" 
-        src="assets/images/roses.jpg" title="roses"/>
-    </div>
-    <div class="media-right">
-        <img class="img-thumbnail img-circle" 
-          src="assets/images/hiboux.jpg" title="hiboux"/>
+<div class="row">
+    <img  class="img-fluid img-thumbnail" src="assets/images/hiboux.jpg" alt="hiboux">
+    <img  class="img-fluid img-thumbnail" src="assets/images/princesse.jpg" alt="princesse">
+    <img  class="img-fluid img-thumbnail" src="assets/images/ete.jpg" alt="été">
+    <img  class="img-fluid img-thumbnail" src="assets/images/indian.jpg" alt="femme indienne">
+    <div *ngIf="user" class="card text-center" style="width: 23rem;">
+            <div class="card-body">
+            <h4 class="card-title">{{ user.lastname }}</h4>
+            <h3 class="card-subtitle mb-2 text-muted">{{ user.firstname }}</h3>
+            <p class="card-text">{{ user.email }}</p>
     </div>
 </div>
+
+
+
+
+
 
 
 

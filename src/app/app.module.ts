@@ -16,6 +16,11 @@ import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { TabdrawingsComponent } from './tabdrawings/tabdrawings.component';
 import { HomeComponent } from './home/home.component';
+import { DetailsdrawingComponent } from './detailsdrawing/detailsdrawing.component';
+import { APP_BASE_HREF } from '@angular/common';
+import { LoginComponent } from './login/login.component';
+import { PageComponent } from './page/page.component';
+import { PagesComponent } from './pages/pages.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,11 @@ import { HomeComponent } from './home/home.component';
     DrawingComponent,
     MenuComponent,
     TabdrawingsComponent,
-    HomeComponent
+    HomeComponent,
+    DetailsdrawingComponent,
+    LoginComponent,
+    PageComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +44,7 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [DrawingService, CategoryService],
+  providers: [DrawingService, CategoryService, {provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

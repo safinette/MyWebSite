@@ -1,7 +1,7 @@
-<h2>Choisir une catégorie de dessin</h2>
+<h4>Choisir une catégorie de dessin</h4>
 <form (ngSubmit)="selectCategory()" [formGroup]="categoryForm">
     <div class="form-group">     
-        <label for="category">Category: </label>
+        <label for="category">Categorie : </label>
         <select formControlName="category" class="form-control" id="category" (ngModel)="categories">
             <option *ngFor="let c of categories" [value]="c.name">{{c.name}}</option>
         </select>
